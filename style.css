@@ -1,0 +1,103 @@
+html{
+    background-color: #363636;
+    color: white;
+    --border:10px solid #ffffff;
+    --border-raius:25px;
+}
+.contanier{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 95vh;
+    width: 100%;
+}
+.screen{
+    width: 200px;
+    height: 200px;
+    background-color: #1a1a1a;
+    border: var(--border);
+    border-radius: 3rem;
+    z-index: 10;
+}
+@keyframes scale {
+    0% , 100%{scale: 1;}
+    50%{scale: 1.1;}
+}
+.top,
+.bottom{
+    background-color: #1a1a1a;
+    border: var(--border);
+    border-radius: var(--border-raius);
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    z-index: 1;
+}
+.left ,
+.right{
+    background-color: #1a1a1a;
+    border: var(--border);
+    border-radius: var(--border-raius);
+    height: 100px;
+    width: 25px;
+    position: absolute;
+    z-index: 1;
+}
+.left{
+    left: 43%;
+}
+.right{
+    right: 43%;
+}
+.top{
+    top: 35%;
+}
+.bottom{
+    bottom: 35%;
+    width: 120px;
+    height: 45px;
+    border-radius: 4rem;
+}
+.screen{
+    animation: transform 7s .1s ease infinite;
+}
+.bottom{
+    animation: translate 7s ease infinite both;
+}
+.right{
+    animation: translate2 7s ease infinite both;
+}
+@keyframes translate2 {
+    0%{z-index: 1;}
+    25%{z-index: 1;width: 10px;height: 50px;border: 6px solid white;transform: translateX(-10px);}
+}
+.left{
+    animation: translate3 7s ease infinite both;
+}
+@keyframes translate3 {
+    0%{z-index: 1;}
+    25%{z-index: 1;translate:235px 50px;width: 10px;height: 50px;border: 6px solid white;}
+}
+.top{
+    animation:tranlste 7s ease infinite;
+}
+@keyframes tranlste {
+    0%{translate: 0 0;}
+    50%{transform: translateY(50px);}
+    75%{transform: translateY(-20px);z-index: 11; width: 20px;height: 20px;border-radius: 50%;border: 2px solid white;}
+}
+@keyframes translate {
+    0%{z-index: 1;}
+    25%{z-index: 11;height: 25px;transform: translateY(50px);width: 70px; border: 5px solid white;}
+    50%{z-index: 11;height: 20px;width: 100px;transform: translateY(8px);}
+    75%{z-index: 11;height: 15px;width: 100px;transform: translateY(15px);}
+    10%{z-index: 1;}
+}
+@keyframes transform {
+    0%{height: 200px;width: 200px;}
+    25%{height: 400px;width: 200px;}
+    50%{height: 200px;width: 350px;}
+    75%{height: 350px;width: 400px;}
+    100%{height: 200px;width: 200px;}
+}
